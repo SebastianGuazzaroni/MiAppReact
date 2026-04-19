@@ -15,7 +15,8 @@ export function TransactionItem({title="Transaction", type="info", mount="total"
             <div className="col-3">
                 <p>{mount}</p>
             </div>
+            
         </div>
-    )
+    );
 
 }   
