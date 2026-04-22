@@ -1,6 +1,6 @@
 import "../css/TransactionItem.css";     
 
-export function TransactionItem({type="Transaction", date="fecha", amount="", category = "", desciption=""}){
+export function TransactionItem({type="", date="", amount="", category = "", description= "Sin descripcion"}){
     
     return (
         <div className="row transactioItem">
@@ -17,7 +17,7 @@ export function TransactionItem({type="Transaction", date="fecha", amount="", ca
                 <p>{amount}</p>
             </div>
             <div className="col-4">
-                <p>{desciption}</p>
+                <p>{description}</p>
             </div>
         </div>
     );

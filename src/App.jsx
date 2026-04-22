@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import { TransactionList } from './components/TransactionList';
 import { AddTransaction } from './components/AddTransaction';
-import NavBar from "./components/NavBar";
+import { NavBar } from './components/NavBar';
+import { Ingresos } from './pages/Ingresos';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -18,23 +20,29 @@ function App() {
   return(
     <>
       <div className="App">
-        <div className="row">
-          <div className='col-2'>
-            <NavBar />
+        <BrowserRouter>
+          <div className="row">
+            <div className='col-2'>
+              <NavBar />
+            </div>
+            <div className='col-6'>
+              <Routes>
+                <Route path='/ingresos' element={
+                  <Ingresos 
+                    transactions={transactions}
+                    onDeleteTransaction={handleDeleteTransaction}
+                  />
+              } />
+              </Routes>
+            </div>
+            <div className='col-4 col-md-4 mt-5'>
+              <AddTransaction onAddTransaction={handleAddTransaction} />
+            </div>
           </div>
-          <div className='col-6'>
-            <h1 className='mt-3 mb-3'>Mis Transacciones</h1>
-            <TransactionList 
-              transactions={transactions} 
-              onDeleteTransaction={handleDeleteTransaction}
-            />
-          </div>
-          <div className='col-4 col-md-4 mt-5'>
-            <AddTransaction onAddTransaction={handleAddTransaction} />
-          </div>
-        </div>
+        </BrowserRouter>
       </div>
     </>
+
   );
 }
 

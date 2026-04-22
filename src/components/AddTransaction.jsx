@@ -4,10 +4,10 @@ import "../css/AddTransaction.css";
 export function AddTransaction({ onAddTransaction }){
     const [formData, setFormData] = useState({
         type: "Egreso",
-        category: "Comida",
+        category: "Comida / Bebida",
         amount: "",
         date: new Date().toLocaleDateString('en-CA'),
-        description: "Sin descripcion"
+        description:""
     });
 
     const handleChange = (e) => {
@@ -21,16 +21,23 @@ export function AddTransaction({ onAddTransaction }){
     const handleSubmit = (e) => {
         e.preventDefault();
         if (formData.amount && formData.category) {
-            onAddTransaction({
+            const transactionData = {
                 id: Date.now(),
                 ...formData
-            });
+            };
+
+            if (!formData.description){
+                delete transactionData.description;
+            }
+
+            onAddTransaction(transactionData);
+
             setFormData({
                 type: "Egreso",
                 category: "Comida / Bebida",
                 amount: "",
                 date: new Date().toLocaleDateString('en-CA'),
-                description: "Sin descripcion"
+                description: ""
             });
         }
     };
@@ -41,18 +48,24 @@ export function AddTransaction({ onAddTransaction }){
             <form className="" onSubmit={handleSubmit}>
                 <div className="row mb-3">
                     <div className="col">
-                        <label>Tipo:</label>
-                        <select className="category" name="type" value={formData.type} onChange={handleChange}>
-                            <option value="Ingreso">Ingreso</option>
-                            <option value="Egreso">Egreso</option>
-                        </select>
+                        <label className="me-2">
+                            Tipo:
+                        </label>
+                        <label className="m-3">
+                            <input className="m-1" type="radio" name="type" value="Ingreso" checked={formData.type === "Ingreso"} onChange={handleChange}/>
+                            Ingreso
+                        </label>
+                        <label className="m-2">
+                            <input className="m-1" type="radio" name="type" value="Egreso" checked={formData.type === "Egreso"} onChange={handleChange} />
+                            Egreso
+                        </label>
                     </div>
-                    
+                <hr className="ms-3"/>
                 </div>
                 <div className="row mb-3">
                     <div className="col">
-                        <label>Categoría:</label>
-                        <select name="category" value={formData.category}>
+                        <label className="me-3" >Categoría:</label>
+                        <select name="category" value={formData.category} onChange={handleChange}>
                             <option value="Comida/Bebida">Comida / Bebida</option>
                             <option value="Oscio">Oscio</option>
                             <option value="Alquiler">Alquiler</option>
@@ -61,10 +74,10 @@ export function AddTransaction({ onAddTransaction }){
                         </select>
                     </div>
                 </div>
-
+                <hr className="ms-2"/>
                 <div className="row mb-3">
                     <div className="col">
-                        <label>Monto:</label>
+                        <label className="me-3" >Monto:</label>
                         <input 
                             className="amount" 
                             type="number" 
@@ -76,28 +89,19 @@ export function AddTransaction({ onAddTransaction }){
                         />
                     </div>
                 </div>
-                <div className="row mb-3">
-                    <div className="col">
-                    <label>Fecha:</label>
-                    <input 
-                        type="date" 
-                        name="date" 
-                        value={formData.date} 
-                        onChange={handleChange}
-                    />
-                    </div>
-                </div>
+                <hr className="ms-2"/>
                 <div className="row">
                     <div className="col">
                         <input 
-                        type={formData.description}
+                        value={formData.description}
                         name="description"
                         placeholder="Sin descripcion" 
+                        onChange={handleChange}
                         />
                     </div>
                 </div>
-                
-                <button className="mb-3 mt-2"type="submit">Agregar Transacción</button>
+                <hr className="ms-2"/>
+                <button className="mb-3 mt-3"type="submit">Agregar Transacción</button>
             </form>
         </div>
     );

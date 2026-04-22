@@ -234,12 +234,12 @@ html, body, #root {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #aa3bff;
+  background: slategray;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8a2be2;
+  background:slategray;
 }
 
 

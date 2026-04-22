@@ -1,4 +1,3 @@
-
 import React from "react";
 import { TransactionItem } from "./TransactionItem";
 import "../css/TransactionList.css";
@@ -18,6 +17,7 @@ export function TransactionList({ transactions, onDeleteTransaction }){
                                 date={transaction.date}
                                 amount={`$${transaction.amount}`}
                                 category={transaction.category}
+                                description={transaction.description}
                             />
                             <button 
                                 className="delete-btn"

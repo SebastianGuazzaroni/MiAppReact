@@ -1,5 +1,7 @@
 .AddTransactionForm{
-    background-color:silver;
+    background-color:whitesmoke;
+    border: 1px lightgray solid;
+    margin-top: 35px;
 }
 
 .AddTransactionForm form {
