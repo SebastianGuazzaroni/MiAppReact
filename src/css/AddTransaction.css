@@ -1,0 +1,19 @@
+.AddTransactionForm{
+    background-color:silver;
+}
+
+.AddTransactionForm form {
+    
+    text-align: center;
+}
+
+.AddTransactionForm label{
+
+    color: black;
+    font-size: 25px;
+
+}
+
+.amount{
+    width: 15%;
+}

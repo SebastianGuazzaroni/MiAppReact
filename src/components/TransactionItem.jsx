@@ -1,22 +1,24 @@
-import "../App.css";     
+import "../css/TransactionItem.css";     
 
-export function TransactionItem({title="Transaction", type="info", mount="total"}){
-    const classes = `notification ${type}`
-
-
+export function TransactionItem({type="Transaction", date="fecha", amount="", category = "", desciption=""}){
+    
     return (
         <div className="row transactioItem">
-            <div className="col-3">
-                <h2>{title}</h2>
+            <div className="col-2">
+                <h2>{type}</h2>
             </div>
-            <div className="col-3">
-                <p>{type}</p>
+            <div className="col-2">
+                <p>{category}</p>
             </div>
-            <div className="col-3">
-                <p>{mount}</p>
+            <div className="col-2">
+                <p>{date}</p>
             </div>
-            
+            <div className="col-2">
+                <p>{amount}</p>
+            </div>
+            <div className="col-4">
+                <p>{desciption}</p>
+            </div>
         </div>
     );
-
 }   
