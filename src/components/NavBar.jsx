@@ -10,8 +10,8 @@ export function NavBar(){
             <h2 className="navTittle">Menú</h2>
             <ul>
                 <li><Link to="/Ingresos">Ingresos</Link></li>
-                <li><a href="#">Egresos</a></li>
-                <li><a href="#">Historial</a></li>
+                <li><Link to="/Egresos">Egresos</Link></li>
+                <li><Link to="/Historial">Historial</Link></li>
                 <li><a href="#">Resumen</a></li>
                 <li><a href="#">Configuración</a></li>
             </ul>

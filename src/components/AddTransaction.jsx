@@ -33,7 +33,7 @@ export function AddTransaction({ onAddTransaction }){
             onAddTransaction(transactionData);
 
             setFormData({
-                type: "Egreso",
+                type: formData.type,
                 category: "Comida / Bebida",
                 amount: "",
                 date: new Date().toLocaleDateString('en-CA'),

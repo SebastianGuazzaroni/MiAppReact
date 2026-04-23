@@ -1,14 +1,16 @@
 import React from 'react';
 import { TransactionList } from '../components/TransactionList';
-import { useState } from 'react';
+
 
 export function Ingresos ({transactions = [], onDeleteTransaction}) {
+
+    const ingresos = transactions.filter(t => t.type === 'Ingreso');
 
     return (
         <>          
             <h1 className='mt-3 mb-3'>Mis Ingresos</h1>
             <TransactionList 
-                transactions={transactions} 
+                transactions={ingresos}
                 onDeleteTransaction={onDeleteTransaction}
             />
         </>

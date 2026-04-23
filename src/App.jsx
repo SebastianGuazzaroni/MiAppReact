@@ -5,6 +5,8 @@ import { TransactionList } from './components/TransactionList';
 import { AddTransaction } from './components/AddTransaction';
 import { NavBar } from './components/NavBar';
 import { Ingresos } from './pages/Ingresos';
+import { Egresos } from './pages/Egresos';
+import Historial from './pages/Historial';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -33,6 +35,18 @@ function App() {
                     onDeleteTransaction={handleDeleteTransaction}
                   />
               } />
+                <Route path='/egresos' element={
+                  <Egresos 
+                    transactions={transactions}
+                    onDeleteTransaction={handleDeleteTransaction}
+                  />
+                } />
+                  <Route path='/historial' element={
+                    <Historial
+                    transactions={transactions}
+                    
+                    />
+                  } />
               </Routes>
             </div>
             <div className='col-4 col-md-4 mt-5'>
