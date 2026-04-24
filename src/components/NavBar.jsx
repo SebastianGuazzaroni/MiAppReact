@@ -12,7 +12,7 @@ export function NavBar(){
                 <li><Link to="/Ingresos">Ingresos</Link></li>
                 <li><Link to="/Egresos">Egresos</Link></li>
                 <li><Link to="/Historial">Historial</Link></li>
-                <li><a href="#">Resumen</a></li>
+                <li><Link to="/Resumen">Resumen</Link></li>
                 <li><a href="#">Configuración</a></li>
             </ul>
         </nav>

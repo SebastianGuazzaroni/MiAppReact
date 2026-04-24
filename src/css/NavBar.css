@@ -1,6 +1,6 @@
 .navBar{
     height: 100%;
-    background: #1e1e2f;
+    background: #702df6;
     justify-content: center;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .navList h2 {
-  color: #583bff;
+  color: white;
   margin-bottom: 20px;
   font-size: 30px;
 }
@@ -32,7 +32,7 @@
 }
 
 .navList a {
-  color: #ccc;
+  color: white;
   text-decoration: none;
   display: block;
   padding: 10px 15px;
@@ -41,6 +41,6 @@
 }
 
 .navList a:hover {
-  background: rgb(49, 32, 110);
+  background: rgb(27, 2, 170);
   color: white;
 }

@@ -1,0 +1,19 @@
+.containerResumen{
+    border: 1px solid silver;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.ingresos{
+    border: 1px solid lightgreen;
+
+}
+
+.egresos{
+    border: 1px solid lightcoral;
+}   
+
+.containerTotal{
+    border: 1px solid lightblue;
+}

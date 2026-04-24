@@ -6,7 +6,8 @@ import { AddTransaction } from './components/AddTransaction';
 import { NavBar } from './components/NavBar';
 import { Ingresos } from './pages/Ingresos';
 import { Egresos } from './pages/Egresos';
-import Historial from './pages/Historial';
+import {Historial} from './pages/Historial';
+import { Resumen } from './pages/Resumen';  
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -27,7 +28,7 @@ function App() {
             <div className='col-2'>
               <NavBar />
             </div>
-            <div className='col-6'>
+            <div className='col-10'>
               <Routes>
                 <Route path='/ingresos' element={
                   <Ingresos 
@@ -47,11 +48,15 @@ function App() {
                     
                     />
                   } />
+                  <Route path='/resumen' element={
+                    <Resumen 
+                      transactions={transactions}
+                      />
+                  } 
+                  /> 
               </Routes>
             </div>
-            <div className='col-4 col-md-4 mt-5'>
-              <AddTransaction onAddTransaction={handleAddTransaction} />
-            </div>
+            
           </div>
         </BrowserRouter>
       </div>

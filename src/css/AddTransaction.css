@@ -1,17 +1,20 @@
 .AddTransactionForm{
-    background-color:whitesmoke;
-    border: 1px lightgray solid;
+    
+    border: 1px solid #42287d;
+    background-color: #2d2648;
     margin-top: 35px;
+    color: white;
 }
 
 .AddTransactionForm form {
     
     text-align: center;
+    color: white;
 }
 
 .AddTransactionForm label{
 
-    color: black;
+    color: white;
     font-size: 25px;
 
 }

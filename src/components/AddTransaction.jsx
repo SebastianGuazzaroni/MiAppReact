@@ -21,6 +21,9 @@ export function AddTransaction({ onAddTransaction }){
     const handleSubmit = (e) => {
         e.preventDefault();
         if (formData.amount && formData.category) {
+            if(formData.type === 'Egreso'){
+                formData.amount = formData.amount*-1
+            }
             const transactionData = {
                 id: Date.now(),
                 ...formData
@@ -29,6 +32,8 @@ export function AddTransaction({ onAddTransaction }){
             if (!formData.description){
                 delete transactionData.description;
             }
+            
+            console.log(formData.amount)
 
             onAddTransaction(transactionData);
 
@@ -40,6 +45,7 @@ export function AddTransaction({ onAddTransaction }){
                 description: ""
             });
         }
+        console.log(formData.amount)
     };
 
     return(
@@ -80,12 +86,24 @@ export function AddTransaction({ onAddTransaction }){
                         <label className="me-3" >Monto:</label>
                         <input 
                             className="amount" 
-                            type="number" 
+                            type="text" 
                             name="amount" 
                             value={formData.amount} 
                             onChange={handleChange}
                             placeholder="$0.00"
                             required
+                        />
+                    </div>
+                </div>
+                <hr className="ms-2"/>
+                <div className="row">
+                    <div className="col">
+                        <label className="me-3">Fecha:</label>
+                        <input 
+                            type="date" 
+                            name="date" 
+                            value={formData.date} 
+                            onChange={handleChange}
                         />
                     </div>
                 </div>
@@ -106,3 +124,5 @@ export function AddTransaction({ onAddTransaction }){
         </div>
     );
 }
+
+export default AddTransaction;
