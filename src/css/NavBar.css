@@ -1,6 +1,6 @@
 .navBar{
     height: 100%;
-    background: #702df6;
+    background: #1C1136;
     justify-content: center;
 }
 
@@ -41,6 +41,7 @@
 }
 
 .navList a:hover {
-  background: rgb(27, 2, 170);
+  background: rgba(5, 7, 33, 0.631);
   color: white;
+  margin-left: 10px;
 }

@@ -4,7 +4,7 @@ import "../css/TransactionList.css";
 
 export function TransactionList({ transactions, onDeleteTransaction }){
     return(
-        <div className="TransactionList">
+        <div className="TransactionList rounded-3">
             
             {transactions.length === 0 ? (
                 <p className="no-transactions">No hay transacciones aún</p>

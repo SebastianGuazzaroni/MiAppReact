@@ -1,7 +1,7 @@
 .TransactionList{
     
     border: 1px solid #42287d;
-    background-color: #2d2648;
+    background-color: rgba(128, 128, 128, 0.50);
     height: 80%;
     padding: 30px;
     padding-left: 60px;

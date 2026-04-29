@@ -1,20 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
 import { TransactionList } from '../components/TransactionList';
 import { AddTransaction } from '../components/AddTransaction';
 
-export function Egresos ({transactions = [], onDeleteTransaction}) {
-
-    
-      const handleAddTransaction = (newTransaction) => {
-        setTransactions(prev => [...prev, newTransaction]);
-      };
-    
-      const handleDeleteTransaction = (id) => {
-        setTransactions(prev => prev.filter(t => t.id !== id));
-      };
-    
-
+export function Egresos({ transactions, onDeleteTransaction, onAddTransaction }) {
     return (
         <>          
             <div className='container'>
@@ -24,15 +12,13 @@ export function Egresos ({transactions = [], onDeleteTransaction}) {
                         <TransactionList 
                         transactions={transactions.filter(t => t.type === 'Egreso')} 
                         onDeleteTransaction={onDeleteTransaction}
-                        
                     />
                     </div>
                     <div className='col-12 col-md-4 mt-3'>
-                    <AddTransaction onAddTransaction={handleAddTransaction} />
+                    <AddTransaction onAddTransaction={onAddTransaction} />
                     </div>
                 </div>
             </div>
-            
         </>
     );
 }

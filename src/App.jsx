@@ -33,12 +33,14 @@ function App() {
                 <Route path='/ingresos' element={
                   <Ingresos 
                     transactions={transactions}
+                    onAddTransaction={handleAddTransaction}
                     onDeleteTransaction={handleDeleteTransaction}
                   />
               } />
                 <Route path='/egresos' element={
                   <Egresos 
                     transactions={transactions}
+                    onAddTransaction={handleAddTransaction}
                     onDeleteTransaction={handleDeleteTransaction}
                   />
                 } />

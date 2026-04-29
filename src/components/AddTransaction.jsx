@@ -21,9 +21,8 @@ export function AddTransaction({ onAddTransaction }){
     const handleSubmit = (e) => {
         e.preventDefault();
         if (formData.amount && formData.category) {
-            if(formData.type === 'Egreso'){
-                formData.amount = formData.amount*-1
-            }
+            
+          
             const transactionData = {
                 id: Date.now(),
                 ...formData
@@ -32,8 +31,6 @@ export function AddTransaction({ onAddTransaction }){
             if (!formData.description){
                 delete transactionData.description;
             }
-            
-            console.log(formData.amount)
 
             onAddTransaction(transactionData);
 
@@ -45,11 +42,11 @@ export function AddTransaction({ onAddTransaction }){
                 description: ""
             });
         }
-        console.log(formData.amount)
+        
     };
 
     return(
-        <div className="container AddTransactionForm">
+        <div className="container AddTransactionForm rounded-3">
             <h3>Agregar Transacción</h3>
             <form className="" onSubmit={handleSubmit}>
                 <div className="row mb-3">
