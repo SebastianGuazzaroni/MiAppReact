@@ -1,11 +1,11 @@
-import "../css/TransactionItem.css";     
+import "../css/TransactionItem.css";
 
-export function TransactionItem({type="", date="", amount="", category = "", description= "Sin descripcion"}){
+export function TransactionItem({type="", date="", amount="", category = "", description= "Sin descripcion", variant=""}){
     
     return (
-        <div className="row transactioItem">
+        <div className={`transactionItem row ${variant} rounded-3`}>
             <div className="col-2">
-                <h2>{type}</h2>
+                <p>{type}</p>
             </div>
             <div className="col-2">
                 <p>{category}</p>
@@ -16,7 +16,7 @@ export function TransactionItem({type="", date="", amount="", category = "", des
             <div className="col-2">
                 <p>{amount}</p>
             </div>
-            <div className="col-4">
+            <div className="col-2">
                 <p>{description}</p>
             </div>
         </div>

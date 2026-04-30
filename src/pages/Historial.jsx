@@ -8,6 +8,7 @@ export function Historial ({transactions = []}) {
             <h1 className='mt-3 mb-3'>Mi Historial</h1>
             <TransactionList 
                 transactions={transactions} 
+                page="historial"
                 
             />
         </>

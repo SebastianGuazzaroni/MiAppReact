@@ -10,11 +10,12 @@ export function Ingresos({transactions, onDeleteTransaction, onAddTransaction })
         <>
             <div className='container'>
                 <h1 className='mt-3 mb-3'> Mis Ingresos </h1>
-                <div className='row'>
+                <div className='row '>
                     <div className='col-12 col-md-8 mt-5 responsiveList'>
                         <TransactionList
                             transactions={transactions.filter(t => t.type === 'Ingreso')}
                             onDeleteTransaction={onDeleteTransaction}
+                            page="ingreso"
                         />
                     </div>
                     <div className='col-12 col-md-4 mt-3'>

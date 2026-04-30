@@ -1,7 +1,7 @@
 .AddTransactionForm{
     
     border: 1px solid #42287d;
-    background-color: #2d2648;
+    background-color: #273951;
     margin-top: 35px;
     color: white;
 }
@@ -21,4 +21,12 @@
 
 .amount{
     width: 15%;
+}
+
+input[type="radio"].ingreso{
+    accent-color: #15be53;
+}
+
+input[type="radio"].egreso{
+    accent-color: #ea2261;
 }

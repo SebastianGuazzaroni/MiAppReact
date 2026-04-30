@@ -11,23 +11,28 @@ export function Resumen ({transactions = []}) {
     return(
         <>
             
-               <h1>RESUMEN DE INGRESOS Y EGRESOS</h1>
-                   <div className='row gx-5 justify-content-between transacciones'>
-                        <div className='col-5 ingresos m-4'>
-                            <TransactionList transactions={transactions.filter(t => t.type === 'Ingreso')} />
-                            Ingresos: {transactions.filter(t => t.type === 'Ingreso').reduce((acc, transaction) => acc + Number(transaction.amount), 0)}   
+               <div className='containerResumen'>
+                <h1>RESUMEN DE INGRESOS Y EGRESOS</h1>
+                   <div className='row gx-5 justify-content-between transacciones  overflow-auto'>
+                        <div className='col-5 '>
+                            <p className='ingresoTitulo'>INGRESOS</p>
+                            <TransactionList transactions={transactions.filter(t => t.type === 'Ingreso')} page="resumen"/>
+                            <p className='ingresoTitulo'>INGRESOS:  {transactions.filter(t => t.type === 'Ingreso').reduce((acc, transaction) => acc + Number(transaction.amount), 0)}  </p> 
+                            
                         </div>
                    
-                        <div className='col-5 egresos m-4'>
-                            <TransactionList transactions={transactions.filter(t => t.type === 'Egreso')} />   
-                            Egresos: {transactions.filter(t => t.type === 'Egreso').reduce((acc, transaction) => acc + Number(transaction.amount), 0)}
-                        </div>  
+                        <div className='col-5'>
+                            <p className='egresoTitulo'>EGRESOS</p>
+                            <TransactionList transactions={transactions.filter(t => t.type === 'Egreso')} page="resumen"/>   
+                            <p className='egresoTitulo'>EGRESOS: {transactions.filter(t => t.type === 'Egreso').reduce((acc, transaction) => acc + Number(transaction.amount), 0)}</p> 
+                        </div> 
+                        
                     </div>
-                <div className='row containerTotal '>
                     <div className='col-12 total '>
-                        Total: {total}
-                    </div>
-                </div>
+                            Total: {total}
+                        </div>
+                    
+               </div>
             
         </>
 

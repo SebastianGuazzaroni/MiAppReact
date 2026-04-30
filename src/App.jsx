@@ -6,7 +6,7 @@ import { AddTransaction } from './components/AddTransaction';
 import { NavBar } from './components/NavBar';
 import { Ingresos } from './pages/Ingresos';
 import { Egresos } from './pages/Egresos';
-import {Historial} from './pages/Historial';
+import { Historial } from './pages/Historial';
 import { Resumen } from './pages/Resumen';  
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
     <>
       <div className="App">
         <BrowserRouter>
-          <div className="row">
+          <div className="row overflow-auto">
             <div className='col-2'>
               <NavBar />
             </div>
@@ -33,15 +33,15 @@ function App() {
                 <Route path='/ingresos' element={
                   <Ingresos 
                     transactions={transactions}
-                    onAddTransaction={handleAddTransaction}
                     onDeleteTransaction={handleDeleteTransaction}
+                    onAddTransaction={handleAddTransaction}
                   />
               } />
                 <Route path='/egresos' element={
                   <Egresos 
                     transactions={transactions}
-                    onAddTransaction={handleAddTransaction}
                     onDeleteTransaction={handleDeleteTransaction}
+                    onAddTransaction={handleAddTransaction}
                   />
                 } />
                   <Route path='/historial' element={

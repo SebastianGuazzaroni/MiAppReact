@@ -22,7 +22,10 @@ export function AddTransaction({ onAddTransaction }){
         e.preventDefault();
         if (formData.amount && formData.category) {
             
-          
+            if(formData.type === "Egreso"){
+                formData.amount = -Math.abs(formData.amount);
+            }
+
             const transactionData = {
                 id: Date.now(),
                 ...formData
@@ -55,11 +58,11 @@ export function AddTransaction({ onAddTransaction }){
                             Tipo:
                         </label>
                         <label className="m-3">
-                            <input className="m-1" type="radio" name="type" value="Ingreso" checked={formData.type === "Ingreso"} onChange={handleChange}/>
+                            <input className="m-1 ingreso" type="radio" name="type" value="Ingreso" checked={formData.type === "Ingreso"} onChange={handleChange}/>
                             Ingreso
                         </label>
                         <label className="m-2">
-                            <input className="m-1" type="radio" name="type" value="Egreso" checked={formData.type === "Egreso"} onChange={handleChange} />
+                            <input className="m-1 egreso" type="radio" name="type" value="Egreso" checked={formData.type === "Egreso"} onChange={handleChange} />
                             Egreso
                         </label>
                     </div>

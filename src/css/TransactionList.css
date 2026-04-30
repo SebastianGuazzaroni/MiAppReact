@@ -1,9 +1,13 @@
 .TransactionList{
     
     border: 1px solid #42287d;
-    background-color: rgba(128, 128, 128, 0.50);
+    background-color:#64748d;
     height: 80%;
     padding: 30px;
-    padding-left: 60px;
+    padding-top: 10px;
+    padding-right: 0;
+    overflow-y: auto;
+    
     
 }
+

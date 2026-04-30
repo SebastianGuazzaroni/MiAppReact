@@ -2,7 +2,7 @@ import React from "react";
 import { TransactionItem } from "./TransactionItem";
 import "../css/TransactionList.css";
 
-export function TransactionList({ transactions, onDeleteTransaction }){
+export function TransactionList({ transactions, onDeleteTransaction, page=""}){
     return(
         <div className="TransactionList rounded-3">
             
@@ -18,6 +18,8 @@ export function TransactionList({ transactions, onDeleteTransaction }){
                                 amount={`$${transaction.amount}`}
                                 category={transaction.category}
                                 description={transaction.description}
+                                variant={page}
+        
                             />
                             <button 
                                 className="delete-btn"
