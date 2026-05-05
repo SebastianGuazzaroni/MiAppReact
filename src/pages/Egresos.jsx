@@ -5,22 +5,20 @@ import { AddTransaction } from '../components/AddTransaction';
 
 export function Egresos ({transactions, onDeleteTransaction, onAddTransaction}) {
 
-
     return (
         <>          
-            <div className='container'>
-                <div className='row'>
-                    <h1 className='mt-3 mb-3'>Mis Egresos</h1>
-                    <div className='col-12 col-md-8 mt-5'>
+            <div className='container-fluid px-2 px-md-4'>
+                <h1 className='mt-3 mb-4 fs-3 fs-md-2'>Mis Egresos</h1>
+                <div className='row g-3'>
+                    <div className='col-12 col-lg-8'>
                         <TransactionList 
-                        transactions={transactions.filter(t => t.type === 'Egreso')} 
-                        onDeleteTransaction={onDeleteTransaction}
-                        page="egreso"
-                        
-                    />
+                            transactions={transactions.filter(t => t.type === 'Egreso')} 
+                            onDeleteTransaction={onDeleteTransaction}
+                            page="egreso"
+                        />
                     </div>
-                    <div className='col-12 col-md-4 mt-3'>
-                    <AddTransaction onAddTransaction={onAddTransaction} />
+                    <div className='col-12 col-lg-4'>
+                        <AddTransaction onAddTransaction={onAddTransaction} />
                     </div>
                 </div>
             </div>

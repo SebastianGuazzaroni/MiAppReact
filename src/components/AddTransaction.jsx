@@ -73,7 +73,7 @@ export function AddTransaction({ onAddTransaction }){
                         <label className="me-3" >Categoría:</label>
                         <select name="category" value={formData.category} onChange={handleChange}>
                             <option value="Comida/Bebida">Comida / Bebida</option>
-                            <option value="Oscio">Oscio</option>
+                            <option value="Ocio">Ocio</option>
                             <option value="Alquiler">Alquiler</option>
                             <option value="Ahorros">Ahorros</option>
                             <option value="Varios">Varios</option>

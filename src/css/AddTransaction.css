@@ -1,9 +1,10 @@
 .AddTransactionForm{
     
-    border: 1px solid #42287d;
+    
     background-color: #273951;
     margin-top: 35px;
     color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
 .AddTransactionForm form {

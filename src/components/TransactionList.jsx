@@ -11,7 +11,7 @@ export function TransactionList({ transactions, onDeleteTransaction, page=""}){
             ) : (
                 <div>
                     {transactions.map(transaction => (
-                        <div key={transaction.id} className="transaction-item-wrapper">
+                        <div key={transaction.id} className="transaction-item-wrapper d-flex justify-content-between align-items-center flex-wrap">
                             <TransactionItem
                                 type={transaction.type}
                                 date={transaction.date}
@@ -22,7 +22,7 @@ export function TransactionList({ transactions, onDeleteTransaction, page=""}){
         
                             />
                             <button 
-                                className="delete-btn"
+                                className="delete-btn ms-2"
                                 onClick={() => onDeleteTransaction(transaction.id)}
                             >
                                 ✕

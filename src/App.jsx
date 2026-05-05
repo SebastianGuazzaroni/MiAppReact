@@ -24,12 +24,19 @@ function App() {
     <>
       <div className="App">
         <BrowserRouter>
-          <div className="row overflow-auto">
-            <div className='col-2'>
+          <div className="row overflow-auto g-0">
+            <div className='col-12 col-md-3 col-lg-2'>
               <NavBar />
             </div>
-            <div className='col-10'>
+            <div className='col-12 col-md-9 col-lg-10'>
               <Routes>
+                <Route path='/' element={
+                  <Ingresos
+                    transactions={transactions}
+                    onDeleteTransaction={handleDeleteTransaction}
+                    onAddTransaction={handleAddTransaction}
+                  />
+              }/>
                 <Route path='/ingresos' element={
                   <Ingresos 
                     transactions={transactions}

@@ -12,7 +12,7 @@ Una aplicación React para gestionar ingresos y egresos personales con una inter
   - **Resumen**: Vista consolidada con totales de ingresos, egresos y balance general
 - **Categorización**: Clasifica transacciones por categoría (Comida/Bebida, Ocio, Alquiler, Ahorros, Varios)
 - **Descripciones**: Agrega notas descriptivas a cada transacción
-- **Filtrado**: Automático por tipo de transacción
+- **Filtrado**: Permite filtrar transacciones segun su categoria o monto total
 - **Interfaz Responsiva**: Diseño adaptable para diferentes tamaños de pantalla
 
 ## 🛠️ Tecnologías
@@ -32,12 +32,13 @@ src/
 │   ├── NavBar.jsx               # Barra de navegación
 │   ├── TransactionItem.jsx      # Componente individual de transacción
 │   ├── TransactionList.jsx      # Lista de transacciones
-│   └── SampleComponent.jsx      # Componente de ejemplo
+│   
 ├── pages/
 │   ├── Ingresos.jsx            # Página de ingresos
 │   ├── Egresos.jsx             # Página de egresos
 │   ├── Historial.jsx           # Página de historial
 │   └── Resumen.jsx             # Página de resumen
+│ 
 ├── css/                         # Estilos globales y por componente
 ├── App.jsx                      # Componente principal
 ├── main.jsx                     # Punto de entrada
@@ -96,7 +97,7 @@ Los estilos pueden personalizarse editando los archivos CSS en `src/css/`:
 
 - **Ingresos**: Verde (#15be53)
 - **Egresos**: Rojo (#ff4757)
-- **Fondo**: Gris oscuro (#273951)
+- **Fondo**: Blanco humo (#e5edf5)
 
 ### Categorías
 
@@ -116,4 +117,6 @@ Este proyecto NO está bajo licencia
 
 ## 👨‍💻 Autor
 
-Desarrollado como trabajo práctico de React en UTN Facultad Regional San Francisco, Ingeniería en Sistemas
+Desarrollado como trabajo práctico de React en UTN Facultad Regional San Francisco, Ingeniería en Sistemas. -Sebastian Guazzaroni.
+
+
