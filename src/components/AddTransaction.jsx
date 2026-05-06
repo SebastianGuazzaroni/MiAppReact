@@ -4,7 +4,7 @@ import "../css/AddTransaction.css";
 export function AddTransaction({ onAddTransaction }){
     const [formData, setFormData] = useState({
         type: "Egreso",
-        category: "Comida / Bebida",
+        category: "Varios",
         amount: "",
         date: new Date().toLocaleDateString('en-CA'),
         description:""
@@ -39,7 +39,7 @@ export function AddTransaction({ onAddTransaction }){
 
             setFormData({
                 type: formData.type,
-                category: "Comida / Bebida",
+                category: "Varios",
                 amount: "",
                 date: new Date().toLocaleDateString('en-CA'),
                 description: ""

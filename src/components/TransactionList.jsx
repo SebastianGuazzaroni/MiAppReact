@@ -3,13 +3,15 @@ import { TransactionItem } from "./TransactionItem";
 import "../css/TransactionList.css";
 
 export function TransactionList({ transactions, onDeleteTransaction, page=""}){
+
     return(
-        <div className="TransactionList rounded-3">
+        <div className="TransactionList rounded-3 p-5">
             
             {transactions.length === 0 ? (
                 <p className="no-transactions">No hay transacciones aún</p>
             ) : (
                 <div>
+                    
                     {transactions.map(transaction => (
                         <div key={transaction.id} className="transaction-item-wrapper d-flex justify-content-between align-items-center flex-wrap">
                             <TransactionItem
